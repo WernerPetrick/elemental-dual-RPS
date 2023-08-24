@@ -1,0 +1,26 @@
+<div class="battlefield">
+    <div class="player">
+        <h3>Your Choice: </h3>
+        <p>{{user_character}}</p>
+        <img src={{user_image}} 
+        
+        >
+    </div>
+    <h3 class="vs">VS</h3>
+    <div class="computer">
+        <h3>Computer's Choice:</h3>
+        <p>{{pc_character}}</p>
+        <img src={{pc_image}} >
+    </div>
+</div>
+
+<div class="center">
+    <button class="btn fight"
+    hx-get="/results"
+    hx-timeout="5000"
+    hx-target="body" 
+    hx-vals='{"user" : "{{user_character}}", "pc": "{{pc_character}}"}'
+    >
+    Fight!
+    </button>
+</div>

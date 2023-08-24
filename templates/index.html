@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/htmx.org@1.9.4"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+    <title>Guardians of the Elements</title>
+</head>
+<body>
+
+    <header>
+        <h1>Elemental Dual</h1>
+        <button  class="help"
+        onclick="openModal()"
+        >How to Play</button>
+    </header>
+
+    <div id="overlay" class="hidden"></div>
+    <div id="modal" class="how-to hidden">
+        <div class="modal-content">
+            <h2 class="modal-header">How to play</h2>
+            <p class="rules-intro">
+                Step into the enchanting realm of "Guardians of the Elements," a captivating hand game that immerses you in the eternal clash of Fire, Water, and Forest Guardians. Embark on a journey of strategic choices against the computer, where each Guardian holds the power to triumph over another. Delve into the rules and grasp how our user-friendly website elevates your gaming experience.
+            </p>
+            <p class="rules-intro">
+                The game features three elemental Guardians: Fire, Water and Forest. The interaction between these Guardians determines the outcome of each dual.
+            </p>
+            <h4>How to Play</h4>
+            <div class="rules">
+                <ol>
+                    <li>Select your Guardian</li>
+                    <li>Once your Guardian has been selected, you will be taken to the battlefield where your Guardian will oppose the computer's Guardian. </li>
+                    <li>The outcome of the dual will be revealed once you click on the "Fight" button</li>
+                    <li>To play again, click on the "Play Again" button</li>
+                </ol>
+            </div>
+        </div>
+        <div class="center">
+            <button class="close-modal modal-btn" onclick="closeModal()">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <main class="game-area">
+        <section class="score-area">
+            <div>
+                <p>Your Score: </p>
+                <p class="score">{{user_score}}</p>
+            </div>
+            <div>
+                <p>Computer Score: </p>
+                <p class="score">{{pc_score}}</p>
+            </div>
+        </section>
+        <section class="character-select">
+            <div class="character-card">
+                <img class="character-img" src="../static/assets/forest.jpg" 
+                hx-post="/user_choice" 
+                hx-vals='{"title": "Forest"}'
+                hx-target="body">
+                <p class="title">Forest</p>
+            </div>
+            <div class="character-card">
+                <img class="character-img" src="../static/assets/fire.jpg" 
+                hx-post="/user_choice" 
+                hx-vals='{"title": "Fire"}'
+                hx-target="body">
+                <p class="title">Fire</p>
+            </div>
+            <div class="character-card">
+                <img class="character-img" src="../static/assets/water.jpg"
+                hx-post="/user_choice" 
+                hx-vals='{"title": "Water"}'
+                hx-target="body">
+                <p class="title">Water</p>
+            </div>
+        </section>
+
+
+    </main>
+    
+</body>
+</html>

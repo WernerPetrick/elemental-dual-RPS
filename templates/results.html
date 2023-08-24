@@ -1,0 +1,21 @@
+<div class="results">
+    <div class="result-text">
+        {% if results is not none %}
+        {% if results == 'Draw' %}
+            <p>It's a DRAW</p>
+        {% elif results %}
+            <p>You WON</p>
+        {% else %}
+            <p>You LOST</p>
+        {% endif %}
+    {% endif %}
+    </div>
+</div>
+
+<div class="center">
+    <button class="btn continue"
+    hx-get="/"
+    hx-target="body" 
+    >Play Again</button>
+</div>
+
