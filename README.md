@@ -10,13 +10,13 @@ This is a simple Rock-Paper-Scissors game implemented using Flask, a Python web 
 1. Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/rock-paper-scissors-app.git
+git clone https://github.com/your-username/elemental-dual-RPS.git
 ```
 
 2. Navigate to the app directory:
 
 ```bash
-cd rock-paper-scissors-app
+cd elemental-dual-RPS
 ```
 
 3. Install the required dependencies using `pip`:
